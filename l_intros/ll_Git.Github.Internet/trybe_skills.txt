@@ -6,4 +6,4 @@ Aprenderei na Trybe...
 - HTML
 - CSS
 - Javascript
-
+- Flexbox
