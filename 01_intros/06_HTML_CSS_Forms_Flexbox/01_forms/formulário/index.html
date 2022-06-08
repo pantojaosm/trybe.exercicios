@@ -10,15 +10,21 @@
 <body>
     <h1>Formulário</h1>
     <form action="" method="get" enctype="multipart/form-data">
-        <label for="nome-completo"></label>Nome Completo:
-        <input type="text" name="nome" id="nome-completo" placeholder="Digite seu nome..." required>
+        <div>
+            <label for="nome-completo">Nome Completo:</label>
+            <input type="text" name="nome" id="nome-completo" 
+            placeholder="Digite seu nome..." required>
+        </div>
         <br>
         <br>
-        <label for="input-email"></label>Endereço Eletrônico:
+        <div>
+        <label for="input-email">Endereço Eletrônico:</label>
         <input type="email" name="email" id="input-email" placeholder="Digite seu email..." required>
+        </div>
         <br>
         <br>
-        <label for="">Estado onde você mora:
+        <div>
+        <label for="">Estado onde você mora:</label>
             <select name="estado" id="input-estado">
                 <option value="sp">São Paulo</option>
                 <option value="am" selected>Amazonas</option>
@@ -27,6 +33,7 @@
                 <option value="ac">Acre</option>
             </select>
         </label>
+        </div>
         <br>
         <br>
         <p>Selecione sua foto: </p>
