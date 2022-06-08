@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução ao Flexbox</title>
+    <style>
+      * {
+          margin: 0px;
+          padding: 0px;
+      }
+
+      h1, h2 {
+          margin: 20px;
+      }
+
+      div {
+          width: 300px;
+          min-height: 70px;
+          border: 1px solid blue;
+          margin: 20px;
+      }
+
+      p {
+          background-color: red;
+          border: 2px solid black;
+          color: white;
+      }
+
+      .teste-flex {
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: center; /*Alinha de acordo com a direção.*/
+          align-items: flex-start; /*Alinha de acordo com o eixo (cima, baixo, centro,...)*/
+          align-content:flex-end; /*Alinha de acordo com o eixo (cima, baixo, centro,...), caso tenha mais de uma linha.*/
+      }
+    </style>
+</head>
+<body>
+   <h1>Aprendendo Flexbox...</h1>
+
+    <!---display: block - O comportamento padrão da tag <p> e da tag <div> é block.-->
+   
+    <!---display: flex.-->
+    <h2>flex</h2>
+    <div class="teste-flex">
+        <p class="p-diferente">1 - Tamires Nunes</p>
+        <p>2 - Lucas Ferraz</p>
+        <p>3 - Gabriel Oliva</p>
+    </div>
+</body>
+</html>
