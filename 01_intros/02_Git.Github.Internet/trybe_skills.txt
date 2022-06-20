@@ -1,9 +1,0 @@
-Aprenderei na Trybe...
-
-- Unix
-- Bash
-- Git
-- HTML
-- CSS
-- Javascript
-- Flexbox
