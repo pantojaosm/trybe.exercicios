@@ -21,7 +21,7 @@ const checkout = (itens, callback) => { // Checkout passa a ser uma HoF,passando
 console.log('Valor total da compra com desconto:', checkout(itens, desconto20PorCento)); // Checkout leva dois parametros.
 
 /*
-Metodo sort(): Ele ordena os elementos do proprio array, e retorna o array. A ordenacao nao e necessairamente estavel. A ordenacao padrao acontece de acordo com a pontuacao de codigo unicode.
+Metodo sort(): Ele ordena os elementos do proprio array, e retorna o array. A ordenacao nao e necessariamente estavel. A ordenacao padrao acontece de acordo com a pontuacao de codigo unicode.
 */
 
 // Ordenar os jogadores em ordem alfabetica.
@@ -61,3 +61,18 @@ const numeros1 = [3, 5, 7, 12, 123, 55, 90, 0, 13];
 
 numeros1.sort((n1, n2) => n1 - n2);
 console.log(numeros1);
+
+// ! Exercicio.
+
+const newEmployees = () => {
+    const employees = {
+      id1: '', // Nome: Pedro Guerra -> Chame sua função passando o nome Pedro Guerra como parâmetro, substituindo as aspas
+      id2: '', // Nome: Luiza Drumond -> Chame sua função passando o nome Luiza Drumond como parâmetro, substituindo as aspas
+      id3: '', // Nome: Carla Paiva -> Chame sua função passando o nome Carla Paiva como parâmetro, substituindo as aspas
+    }
+    return employees;
+  };
+
+const empregado = (nomeCompleto, email) => console.log({ nomeCompleto});
+
+empregado(newEmployees);
