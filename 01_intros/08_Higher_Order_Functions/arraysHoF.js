@@ -1,22 +1,63 @@
-// todo Introdução a Higher Order Functions
+// todo Introdução a Higher Order Functions utilizadas com Arrays.
 
-// ? First Class Functions: As funções podem ser atribuidas a variáveis, passadas como argumento, ou retornadas por outras funções.
+// & Exemplo de um array de objetos, com a utilizacao de loops.
 
-// & Exemplo de funcão, para ser atribuida dentro de uma variável.
+const students = [
+  { name: 'Maria', grade: 70, approved: '' },
+  { name: 'José', grade: 56, approved: '' },
+  { name: 'Roberto', grade: 90, approved: '' },
+  { name: 'Ana', grade: 81, approved: '' },
+];
 
-function sum (number1, number2) {
-    return number1 + number2;
+function verifyGrades() {
+  for (let index = 0; index < students.length; index += 1) {
+    const student = students[index];
+    if (student.grade >= 60) {
+      student.approved = 'Aprovado';
+    } else {
+      student.approved = 'Recuperação';
+    }
   }
-  
-  const sumVariable = sum;
-  
-  console.log(sumVariable); //  * [Function: sum]
+}
 
-// & Exemplo 2, com arrow function.
+verifyGrades();
 
-const sum = (number1, number2) => {
-    return number1 + number2;
-  };
+console.log(students);
+// [
+//   { name: 'Maria', grade: 70, approved: 'Aprovado' },
+//   { name: 'José', grade: 56, approved: 'Recuperação' },
+//   { name: 'Roberto', grade: 90, approved: 'Aprovado' },
+//   { name: 'Ana', grade: 81, approved: 'Aprovado' }
+// ]
+
+// & Mesmo exemplo, com forEach, com o objetivo de repetir todos os elementos de um array.
+
+const studentsTrybe = [
+  { name: 'Maria', grade: 70, approved: '' },
+  { name: 'José', grade: 56, approved: '' },
+  { name: 'Roberto', grade: 90, approved: '' },
+  { name: 'Ana', grade: 81, approved: '' },
+];
+
+function verifyGrades() {
+  students.forEach((student, index) => {
+    if (student.grade >= 60) {
+      students[index].approved = 'Aprovado';
+    } else {
+      students[index].approved = 'Recuperação';
+    }
+  });
+}
+
+verifyGrades();
+
+console.log(studentsTrybe);
+// [
+//   { name: 'Maria', grade: 70, approved: 'Aprovado' },
+//   { name: 'José', grade: 56, approved: 'Recuperação' },
+//   { name: 'Roberto', grade: 90, approved: 'Aprovado' },
+//   { name: 'Ana', grade: 81, approved: 'Aprovado' }
+// ]
 
 // * Com a arrow function, é utilizado a capacidade do javascript de armazenar a função dentro de uma variável (const). 
 

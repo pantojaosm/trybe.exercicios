@@ -92,3 +92,8 @@ const firstMultipleOf5 = numbers.find((number) => number % 5 === 0);
 
 console.log(firstMultipleOf5);
 // 50
+
+const buttonNew = document.getElementById('button');
+buttonNew.addEventListener('click', () => {
+  console.log('Clicou no botão!');
+});
