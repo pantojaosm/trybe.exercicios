@@ -59,7 +59,72 @@ console.log(studentsTrybe);
 //   { name: 'Ana', grade: 81, approved: 'Aprovado' }
 // ]
 
-// * Com a arrow function, é utilizado a capacidade do javascript de armazenar a função dentro de uma variável (const). 
+// * Aula 8.2 - forEach
+
+// Fazer o log de cada numero do array multiplicado por 3.
+
+const numeros = [12, 3, 5, 7, 123, 55, 90, 0, 13];
+
+// ^ Com For Of.
+for (let numero of numeros) {
+  console.log(numero); // * 12 3 5 7 123 55 90 0 13
+};
+
+// ^ Com o ForEach: numero.forEach(mostraNumeros)
+numeros.forEach((numero) => {
+  console.log(numero); // * 12 3 5 7 123 55 90 0 13
+});
+
+const estados = [
+    'Acre',
+    'Alagoas',
+    'Amapá',
+    'Amazonas',
+    'Bahia',
+    'Ceará',
+    'Distrito Federal',
+    'Espírito Santo',
+    'Goías',
+    'Maranhão',
+    'Mato Grosso',
+    'Mato Grosso do Sul',
+    'Minas Gerais',
+    'Pará',
+    'Paraíba',
+    'Paraná',
+    'Pernambuco',
+    'Piauí',
+    'Rio de Janeiro',
+    'Rio Grande do Norte',
+    'Rio Grande do Sul',
+    'Rondônia',
+    'Roraíma',
+    'Santa Catarina',
+    'São Paulo',
+    'Sergipe',
+    'Tocantins',
+];
+
+// ? Fazer o log de todos os estados do array abaixo no formato.
+// 1 - Acre
+// 2 - Alagoas
+
+// // Com FOR Tradicional.
+// console.log('Lista de estados brasileiros');
+// for (let index = 0; index < estados.length; index++) {
+//   console.log(`${index + 1} - ${estados[index]}`);
+// };
+
+// Com forEach.
+estados.forEach((estado, index) => console.log(`${index + 1} - ${estado}`));
+
+
+
+
+
+
+
+
 
 // & Exemplo de função como argumento para outras funções.
 
