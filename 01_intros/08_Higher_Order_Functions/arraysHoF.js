@@ -59,117 +59,121 @@ console.log(studentsTrybe);
 //   { name: 'Ana', grade: 81, approved: 'Aprovado' }
 // ]
 
-// * Com a arrow function, é utilizado a capacidade do javascript de armazenar a função dentro de uma variável (const). 
+// * Aula 8.2 - forEach
 
-// & Exemplo de função como argumento para outras funções.
+// Fazer o log de cada numero do array multiplicado por 3.
 
-const sayHello = () => {
-    return ('hello trybers');
-  }
-  
-  const printGreeting = (callback) => {
-      console.log(callback());
-  }
-  
-  printGreeting(sayHello);
+const numeros = [12, 3, 5, 7, 123, 55, 90, 0, 13];
 
-// & Exemplo de retorno de uma função, vindo de outra função.
-
-  const sumFixAmount = (amount) => {
-    return (number) => amount + number;
-  }
-  
-  const initialSum = sumFixAmount(15)
-  console.log(initialSum(5));
-
-// ? Higher Order Functions: Funções que usam outras funções em suas operações, sendo elas aceitadas como parâmetro e/ou retorná-las.
-
-// & Exemplo de HoF:
-
-const button = document.querySelector('#signup-button');
-
-const registerUser = () => {
-  console.log('Registrado com sucesso!');
+// ^ Com For Of.
+for (let numero of numeros) {
+  console.log(numero); // * 12 3 5 7 123 55 90 0 13
 };
 
-button.addEventListener('click', registerUser); // * No exemplo, há uma função que simula o registro de uma nova pessoa e passamos como argumento de uma segunda função, o que torna o addEventListener uma HoF.
-
-// ^ Numa frase... 
-// ^ First Class Functions: Funções suportadas em outras operações, para serem usadas em outros tipos.
-// ^ High Order Functions: Função que recebe como parâmetro e/ou retorna outra função.
-
-//  & O exmeplo abaixo é mostrado uma função para implementar um laço de repetição entre 0 e um número especificado via parâmetro (number) e para mostrar no console o valor da variável count de 0 a N (number).
-
-const repeat = (number, action) => {
-  for (let count = 0; count <= number; count += 1) {
-    action(count);
-  }
-};
-
-repeat(5, console.log); // * 0 1 2 3 4 5;
-
-
-const repeatAgain = (number, action) => {
-  for (let count = 0; count <= number; count += 1) {
-    action(count);
-  }
-};
-
-repeatAgain(3, (number) => {
-  if (number % 2 === 0) {
-    console.log(number, 'is even.');
-  } else {
-    console.log(number, 'is odd.');
-  }
+// ^ Com o ForEach: numero.forEach(mostraNumeros)
+numeros.forEach((numero) => {
+  console.log(numero); // * 12 3 5 7 123 55 90 0 13
 });
 
-const repeatOneMoreTime = (number, action) => {
-  for (let count = 0; count <= number; count += 1) {
-    action(count);
-  }
+const estados = [
+    'Acre',
+    'Alagoas',
+    'Amapá',
+    'Amazonas',
+    'Bahia',
+    'Ceará',
+    'Distrito Federal',
+    'Espírito Santo',
+    'Goías',
+    'Maranhão',
+    'Mato Grosso',
+    'Mato Grosso do Sul',
+    'Minas Gerais',
+    'Pará',
+    'Paraíba',
+    'Paraná',
+    'Pernambuco',
+    'Piauí',
+    'Rio de Janeiro',
+    'Rio Grande do Norte',
+    'Rio Grande do Sul',
+    'Rondônia',
+    'Roraíma',
+    'Santa Catarina',
+    'São Paulo',
+    'Sergipe',
+    'Tocantins',
+];
+
+// ? Fazer o log de todos os estados do array abaixo no formato.
+// 1 - Acre
+// 2 - Alagoas
+
+// Com FOR Tradicional.
+console.log('Lista de estados brasileiros');
+for (let index = 0; index < estados.length; index++) {
+  console.log(`${index + 1} - ${estados[index]}`);
 };
 
-const isEven = (number) => {
-  if (number % 2 === 0) {
-    console.log(number, 'is even');
-  }
+// Com forEach.
+estados.forEach((estado, index) => console.log(`${index + 1} - ${estado}`));
+
+// * Conceitos de SOME e EVERY, utilizados para expressoes booleanas (TRUE/FALSE).
+
+const pessoas = [
+  {nome: 'Robert', sobreNome: 'De Niro', dirige: true },
+  {nome: 'Michelle', sobreNome: 'Pfeiffer', dirige: true },
+  {nome: 'Will', sobreNome: 'Smith', dirige: true },
+  {nome: 'Mariah', sobreNome: 'Carey', dirige: false },
+  {nome: 'Lady', sobreNome: 'Gaga', dirige: true },
+  {nome: 'Gaga', sobreNome: 'Bieber', dirige: false },
+]
+
+// Usando FOR OF.
+let pessoaqueSabeDirigir = false;
+for (const pessoa of pessoas) {
+  if (pessoa.dirige === true) {
+    pessoaqueSabeDirigir = true;
+    break;
+  };
 };
 
-const isOdd = (number) => {
-  if ((number % 2) > 0) {
-    console.log(number, 'is odd');
-  }
-};
+console.log('Alguem sabe dirigir?', pessoaqueSabeDirigir);
 
-repeat(3, isEven); // Testa quais números serão pares;
-repeat(3, isOdd); // Testa quais números serão ímpares;
+// & Usando SOME para verificar se UMA pessoa sabe dirigir.
+let alguemqueDirige = pessoas.some((pessoa) => {
+  return pessoa.dirige === true;
+});
 
-const numberGenerator = () => {
-  return Math.random() * 100;
-}
-
-console.log(numberGenerator());
-
-// * Ao executar esse código, não recebemos um número aleatório. Isso aconteceu porque na quinta linha do script nós imprimimos apenas a escrita da função, como não realizamos sua execução, ela não seguiu os procedimentos para retornar um número aleatório. Para executarmos a função, teríamos que inserir () na frente do numberGenerator.
+console.log('Alguem sabe dirigir?', alguemqueDirige);
 
 
+// * Usando o EVERY para verificar se TODAS as pessoas sabem dirigir.
+const todasAsPessoasDirigem = pessoas.every((pessoa) => pessoa.dirige === true);
+console.log(`Todas as pessoas da lista dirigem? ${todasAsPessoasDirigem}`);
 
-const soma = (numero1, numero2) => numero1 + numero2;
+// ^ Usando o FIND para verificar a PRIMEIRA pessoa que nao sabe dirigir.
+const pessoaqueNaoSabeDirigir = pessoas.find((pessoa) => pessoa.dirige === false);
 
-const menos = (numero1, numero2) => numero1 - numero2;
+console.log(pessoaqueNaoSabeDirigir);
 
-const calculadora = (funcao) => funcao(10, 5);
+// Pra Fixar...
+// 1 - Escreva uma funcao que, dado um array de nomes e um nome retorne TRUE se ele estiver contido e caso contrario, retorne FALSE, use SOME.
 
-console.log(calculadora(soma));
+const arrayNomes = ['Matheus', 'Jose', 'Ana', 'Claudia', 'Bruna', 'Lucas'];
 
+const hasName = (array, nome) => array.some((name) => {
+  return name === nome;
+});
 
+console.log(hasName(arrayNomes, 'Ana'));
 
-const primeiro = () => 'Acordando!';
+// 2 - Escrever uma funcao que, dado um array de pessoas e uma idade minima retorne TRUE se todas tiverem a idade maior ou igual (>=) a minima, e caso contrario FALSE, use EVERY.
 
-const segundo = () => 'Bora tomar café!';
-
-const terceiro = () => 'Partiu dormir!';
-
-const doingThings = (callback) => console.log(callback()); 
-
-doingThings(primeiro);
+const people = [
+  {name: 'Matheus', age: 18 },
+  {name: 'Jose', age: 16 },
+  {name: 'Ana', age: 23 },
+  {name: 'Mariah', age: 'Carey' },
+  {name: 'Lady', age: 'Gaga' },
+]
