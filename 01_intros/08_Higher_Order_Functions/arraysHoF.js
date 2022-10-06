@@ -168,12 +168,18 @@ const hasName = (array, nome) => array.some((name) => {
 
 console.log(hasName(arrayNomes, 'Ana'));
 
-// 2 - Escrever uma funcao que, dado um array de pessoas e uma idade minima retorne TRUE se todas tiverem a idade maior ou igual (>=) a minima, e caso contrario FALSE, use EVERY.
+// 2 - Escrever uma funcao que, dado um array de pessoas e uma idade minima retorne TRUE se todas tiverem a idade maior ou igual a minima, e caso contrario FALSE, use EVERY.
 
 const people = [
-  {name: 'Matheus', age: 18 },
-  {name: 'Jose', age: 16 },
-  {name: 'Ana', age: 23 },
-  {name: 'Mariah', age: 'Carey' },
-  {name: 'Lady', age: 'Gaga' },
-]
+  { name: 'Mateus', age: 18 },
+  { name: 'José', age: 16 },
+  { name: 'Ana', age: 23 },
+  { name: 'Cláudia', age: 20 },
+  { name: 'Bruna', age: 19 },
+];
+
+const verifyAges = (array, idadeMinima) => {
+  return array.every((person) => person.age >= idadeMinima);
+};
+
+console.log(verifyAges(people, 18));

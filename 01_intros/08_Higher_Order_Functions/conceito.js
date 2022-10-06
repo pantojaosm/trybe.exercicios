@@ -131,4 +131,4 @@ const terceiro = () => 'Partiu dormir!';
 
 const doingThings = (callback) => console.log(callback()); 
 
-doingThings(primeiro);
+doingThings(segundo);
