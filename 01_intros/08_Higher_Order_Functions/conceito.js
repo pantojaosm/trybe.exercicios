@@ -57,7 +57,7 @@ button.addEventListener('click', registerUser); // * No exemplo, há uma funçã
 // ^ First Class Functions: Funções suportadas em outras operações, para serem usadas em outros tipos.
 // ^ High Order Functions: Função que recebe como parâmetro e/ou retorna outra função.
 
-//  & O exmeplo abaixo é mostrado uma função para implementar um laço de repetição entre 0 e um número especificado via parâmetro (number) e para mostrar no console o valor da variável count de 0 a N (number).
+//  & O exemplo abaixo é mostrado uma função para implementar um laço de repetição entre 0 e um número especificado via parâmetro (number) e para mostrar no console o valor da variável count de 0 a N (number).
 
 const repeat = (number, action) => {
   for (let count = 0; count <= number; count += 1) {
